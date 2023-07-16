@@ -21,7 +21,9 @@
 def caesar_cipher(string, shift_value)
   array = string.codepoints
   array = array.map do |num|
-    if num.between?(97, 122)
+    if num.between?(65, 90)
+      num + shift_value > 90 ? num + shift_value - 26 : num + shift_value
+    elsif num.between?(97, 122)
       num + shift_value > 122 ? num + shift_value - 26 : num + shift_value
     else
       num
