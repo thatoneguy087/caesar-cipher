@@ -19,6 +19,8 @@
 # 6. convert the array of numbers back to letters and join with reduce.
 
 def caesar_cipher(string, shift_value)
+  shift_value = shift_value % 26
+  return string if shift_value == 0
   array = string.codepoints
   array = array.map do |num|
     if num.between?(65, 90)
@@ -33,3 +35,6 @@ def caesar_cipher(string, shift_value)
 end
 
 p caesar_cipher('What a string!', 5)
+p caesar_cipher('What a string!', 25)
+p caesar_cipher('What a string!', 26)
+p caesar_cipher('What a string!', 27)
