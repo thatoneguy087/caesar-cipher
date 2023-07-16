@@ -34,7 +34,8 @@ def caesar_cipher(string, shift_value)
   array.reduce('') { |string, num| string << num.chr }
 end
 
-p caesar_cipher('What a string!', 5)
-p caesar_cipher('What a string!', 25)
-p caesar_cipher('What a string!', 26)
-p caesar_cipher('What a string!', 27)
+puts 'What would you like to encrypt?'
+string = gets.chomp
+puts 'How many places would you like to shift it?'
+shift_value = gets.chomp.to_i
+puts "\"#{caesar_cipher(string, shift_value)}\" is your encrypted string!"
